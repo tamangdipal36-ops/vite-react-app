@@ -1,9 +1,9 @@
-import { Routes, Route, Link, Outlet } from "react-router";
-import Home from "./pages/Home";
+import { Link, Outlet, Route, Routes } from "react-router";
 import About from "./pages/About";
+import ContactComponent from "./pages/Contact";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import ContactComponent, { Test } from "./pages/Contact";
-
+import { Student } from "./pages/props";
 // from   
 function Layout() {
   return (
@@ -26,11 +26,12 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Home />} />
+        <Route index element={< Home />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<ContactComponent name={"Tech AI"} location={"New BaNESHWOR"} classes={"CSIT"} />} />
         {/* <Route path="test" element={<Test />} /> */}
         <Route path="*" element={<NotFound />} />
+        <Route path="props" element={<Student name={"Dipal Tamang"} age={"20"} course={"Cyber Nexus"}/>} />  
       </Route>
     </Routes>
   );
